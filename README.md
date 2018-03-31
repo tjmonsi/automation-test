@@ -17,13 +17,19 @@ A take on automating testing and deployment. This is an upgrade of the `testing-
 - create branch from develop
 - test on branch
 - edit bugs if ever
+- do local test
+- when tests are ok, run `npm version`
 - create PR to master
 - when tests are ok, merge PR
 
-### When releasing/deploying
-- git pull on master
-- change package.json version
--
+### After making a release
+- create branch from master
+- run `github_changelog_generator`
+- commit with [ci-skip]
+- create PR to master
+- merge to master
+- create PR to develop (using master)
+- merge to develop
 
 **Note** The next part of README is how to test Web components
 -----------------------------
