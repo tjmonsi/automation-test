@@ -15,10 +15,9 @@ branches:
   - master
   - develop
 deploy:
-  matrix:
   - provider: releases
     skip_cleanup: true
-    api_key:
+    api_key: $CHANGELOG_GITHUB_TOKEN
     file:
     - test-component.js
     - LICENSE
@@ -29,11 +28,14 @@ deploy:
     before_deploy:
     - gem install github_changelog_generator
     after_deploy:
-    - ./.github/update-changelog.sh
+    - "./.github/update-changelog.sh"
   - provider: npm
     skip_cleanup: true
     email: tjkpmonserrat@gmail.com
-    api_key:
-      secure: A3taaI/BaDliaEnIGsY26MzOcHAkgKV/H97XWARq/WqNbTz/+zNpd0pM4RQMstYbmY3HqLnrYW6pDsvtU5yRkXxrzyfFrRuytzzp13mthUIdfIn7TLI/YshiJa7jbire1aWh8+fMJWuDXywz7cSiVhBvqdd1oQvSQZ37197kWa9wvsjtcQ8Unk2Z2pd3GHFyHFeCgyxiX1NzVABvcFlW2yWrmKzyE+kehlnQm0OBlQvMaAlHGRIZiULMValEAxhEIOnSZPm1K2BNC9mn2jYnc1vLsa1582OQg2xjlxufO8mtGzcenAf9CJeSW7BqlJjIvOgmH1D2B7sRUloPvJgG13X5xqdGEol/fUjO38D58CNn8lsIOME9kyjoYHDmtvBR9nMr8Qjkq7JPU/oJAQB8UUrPJBAdYOvtUv3/wIrW4Jg2HrtOh3XtLYXaV1pZ7vCIil5n1dBGXm+t17Qb0sAbu9tZczcyw7lJWxoPArs7Q8Re5XLoX2WpM0MVgkoG7ktC5G1W70aQKwviM9yHXquZdil+fX2KsMlFsxL7QAForTUcTvVnACXtz7xiteivW10wsV4X705fa9yCYq+7lWXxd8cuwoA13BEW4p/NJ/BJfIDcF8B7Fp13HYvyeJHxEz19WyN8WpHv1zVm/uwA4ksQjzTR97FOH5AlR9Bm1lXbgrE=
+    api_key: $NPM_TOKEN
     on:
       tags: true
+env:
+  global:
+  - secure: DDTOyeDL7krd+h7kdcxY62fI33f7j7e/z+Pe2rw3c5rNnV7Of5119BJoNzC01C/HCer9jo8xffpajmoBPaJ+deVf9jWGsNdRQ8NFtk1t8ikQTXk2RiMT6F28nkOY6weM+r9PYrdScn9OyUpSufutZ/qpHO8nRzZZxwMAb7oAeBHMTLbaa3EvL2dgYnzliLqIAFWNteiptlgz9ziFvsCxrKlPV4iJGRZNYtj/LdIVUPec77M1LrC7n+UcY24RzHx1FIcGIFcMoUzhLfgVINO97Gor8lraHMR+ixh20xhYpqLgDrPlqGDW0/fYsCh1Osu4ddujddsM0c8b+uB/jaTttq88k1AnDS4FhQE7uG5PWCMjbDpodT+EC/hRZ+blVVU0WkTUnd7OJjIcYX8w0KjRXRi4tZNEOsQx0q3G2Oy5dqyJ8UXyVW+vgu4nz3Ur8W2feSUXQfEBJENzSdsHvnOTIz1RebAeYARKn4JkOVPVDB9dcnDdfTDNJlZmi+JmlMDPdrWn7BuHbvwbfqMj7zQi2rG2DA/3maP1nG5ZWoRnEh8dAVihFjuKnfX3L6Lwmk7Vs7AosB1KA3PNbobKbQ8N0RUExi5qnwQP5eOuE2Zy5vy59QD5VUmNmNgoRGBFS0ej56GFhnca7CfEKmg4w12ptXYyN8IBkpkH8nT6XqC3vI8=
+  - secure: pA1as/9lQOy9w5VnxwT60e4lks0d9ADsA6gXQE/wPsCUjHldQGTkfYVfG4KAdhF4ood6lgL3WgpRgumrprhQuTMp1mCySW3p32V4p1OEQmrLa7jhkGE0s6TGB0+FvEdMqAl+83GM70MdyNG1aT638G+x1PIV5bBsniZtYZdl4U+L7ywpqLzE2LtDGlVjnL7Hs1aiiDgDCZQk/fM7ULM4+VJYBCggIGyU0dll3VdclP+m8z4DxPeKE2LgQO1Px8OW/7HB7XTXblnh7AHxD/min6X6G8gzl8JD/AjDBiXG9CQ72pf3xIS/SzxyinsbbjkXiTVQUiBU9vGa9dxB7T2hsnckTPcqr13h9L6WT42qwEoqpH7+cvJRgMIeVy3DDpn+GrSoZwf0hgLIde/pHX44j6+Xsoh5ncBOIHNKBmHHRRCsRKr1D2vcGc8V93zEazw5BmpRp0e4faDeHI1ZJ9ZuwnTWflvdYj0PCIPDAAlclr+0jFj9POSms/zPo/X4WUJIerj8Ykpx9VWOzxRwli9DSbFEDwVC9V48GAqCWs7fXIaCvTdnjoMp9S4GLzyO7fKPyt84tihPFrRajN3T6/cJGyAzVkU1h9cKBPISOBclsaGN9lY8BUpK+GbO+MfSoHMF3c3Yx8z3/1Eok5vfhaU8SIyT06+2wservdAif+XAOqo=
