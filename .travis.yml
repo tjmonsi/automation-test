@@ -16,7 +16,7 @@ branches:
   - master
   - develop
 before_deploy:
-  - git tag $(cat package.json | jq '.version')
+  - git tag -f $(cat package.json | jq '.version')
   - gem install github_changelog_generator
 deploy:
   - provider: releases
