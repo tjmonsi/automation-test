@@ -26,11 +26,7 @@ deploy:
     skip_cleanup: true
     api_key: $CHANGELOG_GITHUB_TOKEN
     file_glob: true
-    file:
-      - 'test-component.js'
-      - 'LICENSE'
-      - 'README.md'
-      - 'dist/*'
+    file: dist/*
     on:
       branch: master
   - provider: npm
