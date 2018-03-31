@@ -15,7 +15,6 @@ branches:
   - master
   - develop
 deploy:
-  matrix:
   - provider: releases
     skip_cleanup: true
     api_key: $CHANGELOG_GITHUB_TOKEN
