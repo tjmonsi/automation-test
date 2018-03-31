@@ -2,7 +2,9 @@
   "name": "@littleq/testing-webcomponents",
   "version": "2.0.0",
   "description": "It's a guide to create testers from webcomponents",
-  "main": "test-component.js",
+  "main": "dist/test-component.cjs.js",
+  "module": "test-component.js",
+  "browser": "dist/element-lite.umd.js",
   "directories": {
     "test": "test"
   },

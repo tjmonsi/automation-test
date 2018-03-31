@@ -46,8 +46,8 @@ const outputCJSESPush = (input, name, es5) => {
     plugins,
     external: ['ms'],
     output: [
-      { file: `dist/${name}.cjs.es5.js`, format: 'cjs' },
-      { file: `dist/${name}.esm.es5.js`, format: 'es' }
+      { file: `dist/${name}.cjs${es5 ? '.es5' : ''}.js`, format: 'cjs' },
+      { file: `dist/${name}.esm${es5 ? '.es5' : ''}.js`, format: 'es' }
     ]
   });
 };

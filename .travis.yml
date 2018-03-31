@@ -16,7 +16,6 @@ branches:
   - master
   - develop
 before_deploy:
-  - npm run build
   - build_version=$(cat package.json | jq '.version')
   - build_version=${build_version#\"}
   - build_version=${build_version%\"}
