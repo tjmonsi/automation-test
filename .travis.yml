@@ -17,6 +17,7 @@ branches:
   - develop
 before_deploy:
   - git tag -f $(cat package.json | jq '.version')
+  - npm run build
   - gem install github_changelog_generator
 deploy:
   - provider: releases
@@ -36,6 +37,7 @@ deploy:
     on:
       branch: master
 after_deploy:
+  - git push --tags
   - ./.github/update-changelog.sh
 env:
   global:

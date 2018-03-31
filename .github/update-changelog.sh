@@ -1,15 +1,16 @@
 #!/bin/bash
 
-git checkout -b changelog_update
-github_changelog_generator
-git add CHANGELOG.md
-git commit -m "changelog update [ci skip]"
-git push -u origin changelog_update
 string=`git config --get remote.origin.url`
 prefix="git@github.com:"
 suffix=".git"
 repo=${string#$prefix}
 repo=${repo%$suffix}
+git checkout -b changelog_update
+github_changelog_generator
+git add CHANGELOG.md
+git commit -m "changelog update [ci skip]"
+git remote add changelog https://${CHANGELOG_GITHUB_TOKEN}@github.com/${repo}.git
+git push -u changelog changelog_update
 url=$(curl -v -d '{"title":"Changelog Update [ci skip]","head":"changelog_update","base":"master"}' -H "Content-Type: application/json" -H "Authorization: token ${CHANGELOG_GITHUB_TOKEN}" https://api.github.com/repos/${repo}/pulls | jq '.url')
 echo $url
 if [ -z ${url+x} ]; then
