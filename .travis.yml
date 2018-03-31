@@ -1,0 +1,39 @@
+sudo: required
+addons:
+  sauce_connect: true
+  firefox: latest
+  chrome: stable
+language: node_js
+node_js:
+- 8.9.4
+before_install:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+script: npm test
+branches:
+  only:
+  - master
+  - develop
+deploy:
+  matrix:
+  - provider: releases
+    skip_cleanup: true
+    api_key:
+    file:
+    - test-component.js
+    - LICENSE
+    - README.md
+    - dist/*
+    on:
+      tags: true
+    before_deploy:
+    - gem install github_changelog_generator
+    after_deploy:
+    - ./.github/update-changelog.sh
+  - provider: npm
+    skip_cleanup: true
+    email: tjkpmonserrat@gmail.com
+    api_key:
+      secure: A3taaI/BaDliaEnIGsY26MzOcHAkgKV/H97XWARq/WqNbTz/+zNpd0pM4RQMstYbmY3HqLnrYW6pDsvtU5yRkXxrzyfFrRuytzzp13mthUIdfIn7TLI/YshiJa7jbire1aWh8+fMJWuDXywz7cSiVhBvqdd1oQvSQZ37197kWa9wvsjtcQ8Unk2Z2pd3GHFyHFeCgyxiX1NzVABvcFlW2yWrmKzyE+kehlnQm0OBlQvMaAlHGRIZiULMValEAxhEIOnSZPm1K2BNC9mn2jYnc1vLsa1582OQg2xjlxufO8mtGzcenAf9CJeSW7BqlJjIvOgmH1D2B7sRUloPvJgG13X5xqdGEol/fUjO38D58CNn8lsIOME9kyjoYHDmtvBR9nMr8Qjkq7JPU/oJAQB8UUrPJBAdYOvtUv3/wIrW4Jg2HrtOh3XtLYXaV1pZ7vCIil5n1dBGXm+t17Qb0sAbu9tZczcyw7lJWxoPArs7Q8Re5XLoX2WpM0MVgkoG7ktC5G1W70aQKwviM9yHXquZdil+fX2KsMlFsxL7QAForTUcTvVnACXtz7xiteivW10wsV4X705fa9yCYq+7lWXxd8cuwoA13BEW4p/NJ/BJfIDcF8B7Fp13HYvyeJHxEz19WyN8WpHv1zVm/uwA4ksQjzTR97FOH5AlR9Bm1lXbgrE=
+    on:
+      tags: true
