@@ -1,21 +1,24 @@
 # Change Log
 
-## [Unreleased](https://github.com/tjmonsi/automated-testing-and-deployment/tree/HEAD)
+## ["1.3.3"](https://github.com/tjmonsi/automation-test/tree/"1.3.3") (2018-03-31)
+[Full Changelog](https://github.com/tjmonsi/automation-test/compare/"1.3.2"..."1.3.3")
 
-[Full Changelog](https://github.com/tjmonsi/automated-testing-and-deployment/compare/v1.0.2-0...HEAD)
+## ["1.3.2"](https://github.com/tjmonsi/automation-test/tree/"1.3.2") (2018-03-31)
+[Full Changelog](https://github.com/tjmonsi/automation-test/compare/"1.3.1"..."1.3.2")
 
+## ["1.3.1"](https://github.com/tjmonsi/automation-test/tree/"1.3.1") (2018-03-31)
+[Full Changelog](https://github.com/tjmonsi/automation-test/compare/untagged-10a70d5f7d78f5c3ae3f..."1.3.1")
+
+## [untagged-10a70d5f7d78f5c3ae3f](https://github.com/tjmonsi/automation-test/tree/untagged-10a70d5f7d78f5c3ae3f) (2018-03-31)
+[Full Changelog](https://github.com/tjmonsi/automation-test/compare/untagged-f1ac37687c57ea688da2...untagged-10a70d5f7d78f5c3ae3f)
+
+## [untagged-f1ac37687c57ea688da2](https://github.com/tjmonsi/automation-test/tree/untagged-f1ac37687c57ea688da2) (2018-03-31)
+[Full Changelog](https://github.com/tjmonsi/automation-test/compare/v1.2.0...untagged-f1ac37687c57ea688da2)
+
+## [v1.2.0](https://github.com/tjmonsi/automation-test/tree/v1.2.0) (2018-03-31)
 **Merged pull requests:**
 
-- Edited automated [\#3](https://github.com/tjmonsi/automated-testing-and-deployment/pull/3) ([tjmonsi](https://github.com/tjmonsi))
-
-## [v1.0.2-0](https://github.com/tjmonsi/automated-testing-and-deployment/tree/v1.0.2-0) (2018-03-29)
-[Full Changelog](https://github.com/tjmonsi/automated-testing-and-deployment/compare/v1.0.1...v1.0.2-0)
-
-## [v1.0.1](https://github.com/tjmonsi/automated-testing-and-deployment/tree/v1.0.1) (2018-03-29)
-**Merged pull requests:**
-
-- added fix [\#2](https://github.com/tjmonsi/automated-testing-and-deployment/pull/2) ([tjmonsi](https://github.com/tjmonsi))
-- first commit [\#1](https://github.com/tjmonsi/automated-testing-and-deployment/pull/1) ([tjmonsi](https://github.com/tjmonsi))
+- Release 1 [\#1](https://github.com/tjmonsi/automation-test/pull/1) ([tjmonsi](https://github.com/tjmonsi))
 
 
 

@@ -15,10 +15,6 @@ branches:
   only:
   - master
   - develop
-before_deploy:
-  - git tag -f $(cat package.json | jq '.version')
-  - npm run build
-  - gem install github_changelog_generator
 deploy:
   - provider: releases
     skip_cleanup: true
@@ -36,9 +32,6 @@ deploy:
     api_key: $NPM_TOKEN
     on:
       branch: master
-after_deploy:
-  - git push --tags
-  - ./.github/update-changelog.sh
 env:
   global:
   - secure: DDTOyeDL7krd+h7kdcxY62fI33f7j7e/z+Pe2rw3c5rNnV7Of5119BJoNzC01C/HCer9jo8xffpajmoBPaJ+deVf9jWGsNdRQ8NFtk1t8ikQTXk2RiMT6F28nkOY6weM+r9PYrdScn9OyUpSufutZ/qpHO8nRzZZxwMAb7oAeBHMTLbaa3EvL2dgYnzliLqIAFWNteiptlgz9ziFvsCxrKlPV4iJGRZNYtj/LdIVUPec77M1LrC7n+UcY24RzHx1FIcGIFcMoUzhLfgVINO97Gor8lraHMR+ixh20xhYpqLgDrPlqGDW0/fYsCh1Osu4ddujddsM0c8b+uB/jaTttq88k1AnDS4FhQE7uG5PWCMjbDpodT+EC/hRZ+blVVU0WkTUnd7OJjIcYX8w0KjRXRi4tZNEOsQx0q3G2Oy5dqyJ8UXyVW+vgu4nz3Ur8W2feSUXQfEBJENzSdsHvnOTIz1RebAeYARKn4JkOVPVDB9dcnDdfTDNJlZmi+JmlMDPdrWn7BuHbvwbfqMj7zQi2rG2DA/3maP1nG5ZWoRnEh8dAVihFjuKnfX3L6Lwmk7Vs7AosB1KA3PNbobKbQ8N0RUExi5qnwQP5eOuE2Zy5vy59QD5VUmNmNgoRGBFS0ej56GFhnca7CfEKmg4w12ptXYyN8IBkpkH8nT6XqC3vI8=
