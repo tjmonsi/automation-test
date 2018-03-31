@@ -1,5 +1,11 @@
 # Change Log
 
+## [v1.3.4](https://github.com/tjmonsi/automation-test/tree/v1.3.4) (2018-03-31)
+[Full Changelog](https://github.com/tjmonsi/automation-test/compare/untagged-66f292de8f9f2123335f...v1.3.4)
+
+## [untagged-66f292de8f9f2123335f](https://github.com/tjmonsi/automation-test/tree/untagged-66f292de8f9f2123335f) (2018-03-31)
+[Full Changelog](https://github.com/tjmonsi/automation-test/compare/"1.3.3"...untagged-66f292de8f9f2123335f)
+
 ## ["1.3.3"](https://github.com/tjmonsi/automation-test/tree/"1.3.3") (2018-03-31)
 [Full Changelog](https://github.com/tjmonsi/automation-test/compare/"1.3.2"..."1.3.3")
 
