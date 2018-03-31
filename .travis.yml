@@ -9,7 +9,7 @@ node_js:
 before_install:
 - export DISPLAY=:99.0
 - sh -e /etc/init.d/xvfb start
-- apt install -y jq
+- sudo apt install -y jq
 script: npm test
 branches:
   only:
@@ -20,16 +20,17 @@ deploy:
     skip_cleanup: true
     api_key: $CHANGELOG_GITHUB_TOKEN
     file:
-    - 'test-component.js'
-    - 'LICENSE'
-    - 'README.md'
-    - 'dist/*'
+      - 'test-component.js'
+      - 'LICENSE'
+      - 'README.md'
+      - 'dist/*'
     on:
       branch: master
     before_deploy:
       - git tag $(cat package.json | jq '.version')
       - gem install github_changelog_generator
-    after_deploy: ./.github/update-changelog.sh
+    after_deploy:
+      - ./.github/update-changelog.sh
   - provider: npm
     skip_cleanup: true
     email: tjkpmonserrat@gmail.com
