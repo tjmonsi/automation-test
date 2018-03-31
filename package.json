@@ -1,6 +1,6 @@
 {
   "name": "@littleq/testing-webcomponents",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "It's a guide to create testers from webcomponents",
   "main": "dist/test-component.cjs.js",
   "module": "test-component.js",
